@@ -1,9 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import TaskForm from './tasksForm'
-import { starteditTask } from '../../actions/tasks'
 
-const EditTask = (props) => {
+import { starteditTask } from '../../../actions/tasks'
+
+import TaskForm from '../TaskForm'
+
+const Edit = (props) => {
     return (
         <div className="container create">
             <TaskForm
@@ -23,4 +25,4 @@ const mapStateToProps = (state, props) => {
     }
 }
 
-export default connect(mapStateToProps)(EditTask)
+export default connect(mapStateToProps)(Edit)

@@ -3,12 +3,12 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import FlipMove from 'react-flip-move'
 
-import TaskItem from './taskItem'
-import selectTasks from '../../selectors/tasks'
-import DeleteAll from './delete-all'
-import Filter from './filter'
+import Task from './Task'
+import SelectedTasks from './Selectors'
+import DeleteAll from './DeleteAll'
+import Filter from './Filter'
 
-import '../../styles/task.css'
+import './style.css'
 
 const Tasks = (props) => (
     <div className="container">
@@ -22,7 +22,7 @@ const Tasks = (props) => (
                 <div className="tasks">
                     <FlipMove>
                         { props.tasks.map((task) => {
-                            return <TaskItem key={task.id} {...task} />
+                            return <Task key={task.id} {...task} />
                         })}
                     </FlipMove>
                 </div>
@@ -54,7 +54,7 @@ const Tasks = (props) => (
 
 const ConnectedTasks = (state) => {
     return {
-        tasks: selectTasks(state.tasksToDo, state.filters)
+        tasks: SelectedTasks(state.tasksToDo, state.filters)
     }
 }
 

@@ -1,11 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { startLogin } from '../../actions/auth'
+import { startLogin } from '../../../../actions/auth'
 
-import logo from '../../assets/logo.svg'
-import '../../styles/login.css'
-import google from '../../assets/google.svg'
+import logo from '../../../../assets/logo.svg'
+import google from './assets/google.svg'
+
+import './style.css'
 
 const Login = ({ startLogin }) => (
     <div className="container-full center-text login">

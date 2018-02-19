@@ -1,6 +1,7 @@
 import React from 'react'
 import Modal from 'react-modal'
-import '../../styles/modal.css'
+
+import './style.css'
 
 const customStyle = {
     content : {
@@ -18,7 +19,7 @@ const customStyle = {
     }
   }
   
-const ModalAlert = (props) => (
+const Alert = (props) => (
     <Modal
         isOpen={!!props.selectedTask}
         contentLabel="todo list"
@@ -36,4 +37,4 @@ const ModalAlert = (props) => (
     </Modal>
 )
 
-export default ModalAlert
+export default Alert

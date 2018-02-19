@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { setTextFilter, sortByDate, sortByDeadline } from '../../actions/filters'
+import { setTextFilter, sortByDate, sortByDeadline } from '../../../../actions/filters'
 
-import '../../styles/forms.css'
+import './style.css'
 
 const Filter = (props) => (
     <div className="container">

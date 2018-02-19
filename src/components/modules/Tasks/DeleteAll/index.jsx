@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { startdeleteAll } from '../../actions/tasks'
+import { startdeleteAll } from '../../../../actions/tasks'
 
-const Deleteall = ({ dispatch }) => (
+const DeleteAll = ({ dispatch }) => (
     <div className="center-text deleteall">
             <button 
                 onClick={(e) => {
@@ -14,4 +14,4 @@ const Deleteall = ({ dispatch }) => (
     </div>
 )
 
-export default connect()(Deleteall)
+export default connect()(DeleteAll)

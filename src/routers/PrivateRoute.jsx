@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Route, Redirect } from 'react-router-dom'
-import Header from '../components/includes/header'
+import Header from '../components/includes/Header'
 
 const PrivateRoute = (
     {

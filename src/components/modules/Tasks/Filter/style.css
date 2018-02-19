@@ -1,6 +1,6 @@
-select {
-
-    margin: 2.1rem 0;
+.search input {
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
 }
 
 .search .search-icon:before {
@@ -10,36 +10,26 @@ select {
 }
 
 .flexed  {
-
     display: flex;
     align-items: center;
 }
 
 .search select  {
-
     width: 40%;
-}
-
-.card .react-datepicker-wrapper  {
-    width: 100%;
-    margin-top: 1.2rem;
-}
-
-.card input[type="time"] {
-    margin-top: 2rem;
-}
-
-.card .react-datepicker__input-container {
-    width: 100%;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    padding: .8rem .5rem;
 }
 
 @media screen and (max-width: 400px) {
-    .search select  {
-        
+    .search select, .search input {
         width: 100%;
+        border-radius: 1.5rem;
+    }
+    .search select {
+        margin: 0;
     }
     .flexed  {
-
         flex-direction: column;
     }
     .search .search-icon:before {

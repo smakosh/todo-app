@@ -3,10 +3,12 @@ import DatePicker from 'react-datepicker'
 import moment from 'moment'
 import NProgress from 'react-nprogress'
 
-import ModalAlert from './modal'
+import Alert from '../Alert'
 
 import 'react-nprogress/nprogress.css'
 import 'react-datepicker/dist/react-datepicker.css'
+
+import './style.css'
 
 export default class TaskForm extends Component {
     constructor(props) {
@@ -140,11 +142,11 @@ export default class TaskForm extends Component {
                         <button type="submit" className="btn btn-rounded btn-outlined purple-btn">Submit</button>
                     </div>
                 </form>
-                <ModalAlert
+                <Alert
                     selectedTask={this.state.selectedTask}
                     closeModal={this.closeModal}
                 />
             </div>
-        );
+        )
     }
 }

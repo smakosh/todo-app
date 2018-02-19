@@ -67,6 +67,10 @@
   height: 100vh;
 } 
 
+select {
+  margin: 2.1rem 0;
+}
+
 .loader {
   position: relative;
   top: 50%;

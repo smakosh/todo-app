@@ -1,8 +1,4 @@
 .single-task  {
-    
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     color: rgb(34, 34, 34);
     background-color: #fff;
     box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.26);
@@ -12,64 +8,50 @@
     transition: .2s;
 }
 
-.single-task:hover  {
+.task-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
+.single-task:hover  {
     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3);
     transform: scale(1.03);
     transition: .2s;
 }
 
 .single-task:last-child  {
-
     margin-bottom: unset;
 }
 
+.delete {
+    padding: .2rem 0;
+}
+
 .tasks  {
-    
     margin-bottom: 2rem;
     padding: 2rem 1rem;
     background-color: #fff;
 }
 
-.buttons  {
-
-    display: flex;
-    align-items: center;
-}
-
-.buttons a  {
-    
-    margin-right: 1rem;
-    margin-top: 1px;
-}
-
-.buttons a:last-child  {
-    
-    margin-right: unset;
-}
-
-.buttons .fa  {
-
+.fa  {
     cursor: pointer;
 }
 
-.buttons .fa-check {
-
-    color: #3ff06b;
-}
-
-.buttons .fa-close {
-
+.fa-close {
     color: #f03f3f;
+    font-size: 1.4em;
 }
 
-.buttons .fa-pencil-square-o  {
+.edit-part {
+    padding: 1rem 0;
+}
 
+.edit-part .edit  {
     color: #1f97fa;
 }
 
 .add-card  {
-
     padding: 2rem 0;
     max-width: 500px;
     margin: 0 auto;
@@ -79,7 +61,6 @@
 }
 
 .add-card a  {
-
     color: #222;
     font-weight: 500;
     transition: .3s;

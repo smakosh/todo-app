@@ -2,10 +2,10 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import { SignOut } from '../../actions/auth'
+import { SignOut } from '../../../actions/auth'
 
-import logo from '../../assets/logo.svg'
-import '../../styles/header.css'
+import logo from '../../../assets/logo.svg'
+import './style.css'
 
 const Header = ({ SignOut }) => (
     <div className="App-header container-full">
