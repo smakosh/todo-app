@@ -1,0 +1,26 @@
+.help  {
+
+    padding: 4rem;
+    position: relative;
+    top: -3rem;
+    background: #fff;
+}
+
+.help p  {
+
+    width: 60%;
+    line-height: 2rem;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1000px)  {
+    .help  {
+
+        padding: 2rem 1rem;
+    }
+    .help p  {
+        
+        width: 100%;
+        line-height: 1.5rem;
+    }
+}

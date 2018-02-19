@@ -1,0 +1,27 @@
+{
+  "name": "todo",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "firebase": "^4.8.0",
+    "history": "^4.7.2",
+    "moment": "^2.19.3",
+    "react": "^16.1.1",
+    "react-datepicker": "^0.61.0",
+    "react-dom": "^16.1.1",
+    "react-flip-move": "^3.0.1",
+    "react-modal": "^3.1.4",
+    "react-nprogress": "^0.1.6",
+    "react-redux": "5.0.5",
+    "react-router-dom": "4.2.2",
+    "react-scripts": "1.0.17",
+    "redux": "3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

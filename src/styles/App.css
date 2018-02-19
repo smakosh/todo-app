@@ -1,0 +1,146 @@
+.App-logo {
+  height: 80px;
+}
+
+.logotodo  {
+  height: 80px;
+  position: relative;
+  top: 3rem;
+}
+
+.App-header {
+  background-color: #222;
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.App-title {
+  font-size: 1.5em;
+  margin-bottom: 4rem;
+}
+
+.create  {
+
+  position: relative;
+  top: -3rem;
+}
+
+.create .card  {
+
+  background: #fff;
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, .19);
+  padding: 2rem;
+}
+
+.task-icon:before  {
+  content: '';
+}
+
+.deleteall  {
+
+  padding: 1rem 0 3rem 0;
+}
+
+.deleteall .red-btn  {
+
+  background-color: #f03f3f;
+}
+
+.link  {
+
+  padding: 2rem 0;
+}
+
+.link a {
+
+  color: #212121;
+  font-size: large;
+}
+
+.link a:visited  {
+
+  color: #212121;
+}
+
+.fixedheight {
+  height: 100vh;
+} 
+
+.loader {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100px;
+  height: 100px;
+  background-color: #212121;
+  display: block;
+  margin: 0 auto;
+  -webkit-animation-name: shape;
+          animation-name: shape;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes shape {
+  0% {
+    border-radius: 50% 50% 50% 50%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  30% {
+    border-radius: 50% 50% 50% 5px;
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  50% {
+    border-radius: 50% 50% 5px 5px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  70% {
+    border-radius: 50% 5px 5px 5px;
+    -webkit-transform: rotate(120deg);
+            transform: rotate(120deg);
+  }
+  100% {
+    border-radius: 5px 5px 5px 5px;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+@keyframes shape {
+  0% {
+    border-radius: 50% 50% 50% 50%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  30% {
+    border-radius: 50% 50% 50% 5px;
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  50% {
+    border-radius: 50% 50% 5px 5px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  70% {
+    border-radius: 50% 5px 5px 5px;
+    -webkit-transform: rotate(120deg);
+            transform: rotate(120deg);
+  }
+  100% {
+    border-radius: 5px 5px 5px 5px;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+#nprogress .bar {
+  height: 6px !important;
+}

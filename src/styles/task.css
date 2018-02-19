@@ -1,0 +1,123 @@
+.single-task  {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(34, 34, 34);
+    background-color: #fff;
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.26);
+    padding: 0 1rem;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    transition: .2s;
+}
+
+.single-task:hover  {
+
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3);
+    transform: scale(1.03);
+    transition: .2s;
+}
+
+.single-task:last-child  {
+
+    margin-bottom: unset;
+}
+
+.tasks  {
+    
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    background-color: #fff;
+}
+
+.buttons  {
+
+    display: flex;
+    align-items: center;
+}
+
+.buttons a  {
+    
+    margin-right: 1rem;
+    margin-top: 1px;
+}
+
+.buttons a:last-child  {
+    
+    margin-right: unset;
+}
+
+.buttons .fa  {
+
+    cursor: pointer;
+}
+
+.buttons .fa-check {
+
+    color: #3ff06b;
+}
+
+.buttons .fa-close {
+
+    color: #f03f3f;
+}
+
+.buttons .fa-pencil-square-o  {
+
+    color: #1f97fa;
+}
+
+.add-card  {
+
+    padding: 2rem 0;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    top: -2.5rem;
+    background-color: #fff;
+}
+
+.add-card a  {
+
+    color: #222;
+    font-weight: 500;
+    transition: .3s;
+    font-size: 14pt;
+}
+
+.add-card a:hover  {
+
+    color: #1f97fa;
+    transition: .3s;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+.empty-state h2 {
+    margin-bottom: 3rem;
+}
+
+.badge {
+    padding: .2rem .5rem;
+    border-radius: 1.5rem;
+    color: #fff;
+}
+
+.Other {
+    background: #FF5722;
+}
+
+.Lifestyle {
+    background: #4CAF50;
+}
+
+.Design {
+    background: #009688;
+}
+
+.Code {
+    background: #673AB7;
+}

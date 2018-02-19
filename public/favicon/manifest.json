@@ -1,0 +1,32 @@
+{
+  "short_name": "Todo App",
+  "name": "Tomorrow todolist",
+ "icons": [
+  {
+    "src": "favicon.ico",
+    "sizes": "64x64 32x32 24x24 16x16",
+    "type": "image/x-icon"
+  },
+  {
+    "src": "icon-128x128.png",
+    "type": "image\/png",
+    "sizes": "128x128"
+  }, {
+    "src": "apple-touch-icon.png",
+    "type": "image\/png",
+    "sizes": "152x152"
+  }, {
+    "src": "ms-touch-icon-144x144-precomposed.png",
+    "type": "image\/png",
+    "sizes": "144x144"
+  }, {
+    "src": "chrome-touch-icon-192x192.png",
+    "type": "image\/png",
+    "sizes": "192x192"
+  }
+ ],
+ "start_url": "/",
+ "display": "standalone",
+ "theme_color": "#212121",
+ "background_color": "#212121"
+}

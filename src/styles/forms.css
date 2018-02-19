@@ -1,0 +1,48 @@
+select {
+
+    margin: 2.1rem 0;
+}
+
+.search .search-icon:before {
+    content: "";
+    top: 0rem;
+    left: 1.6rem;
+}
+
+.flexed  {
+
+    display: flex;
+    align-items: center;
+}
+
+.search select  {
+
+    width: 40%;
+}
+
+.card .react-datepicker-wrapper  {
+    width: 100%;
+    margin-top: 1.2rem;
+}
+
+.card input[type="time"] {
+    margin-top: 2rem;
+}
+
+.card .react-datepicker__input-container {
+    width: 100%;
+}
+
+@media screen and (max-width: 400px) {
+    .search select  {
+        
+        width: 100%;
+    }
+    .flexed  {
+
+        flex-direction: column;
+    }
+    .search .search-icon:before {
+        display: none;
+    }
+}

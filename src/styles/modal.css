@@ -1,0 +1,14 @@
+.Overlay  {
+    
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, .65);
+    color: #fff;
+}
+.Overlay h2  {
+        
+    margin-bottom: 3rem;
+}
