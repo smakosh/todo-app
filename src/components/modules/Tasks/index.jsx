@@ -8,6 +8,7 @@ import SelectedTasks from './Selectors'
 import DeleteAll from './DeleteAll'
 import Filter from './Filter'
 
+import add from '../../../assets/add.svg'
 import './style.css'
 
 const Tasks = (props) => (
@@ -15,6 +16,11 @@ const Tasks = (props) => (
         <div className='card center-text add-card'>
           <Link to="/create">Add new Task</Link>
         </div>
+        
+        <Link className="add-card-mobile" to="/create">
+            <img src={add} alt="add new task" />
+        </Link>
+        
         <Filter />
         <div className="row">
             <div className="column xlarge-2 medium-2 hide-mobile"></div>

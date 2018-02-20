@@ -1,3 +1,15 @@
+.App-header {
+    background-color: #222;
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.App-title {
+    font-size: 1.5em;
+    margin-bottom: 4rem;
+}
+
 .routes  {
 
     padding: 2rem 0;
@@ -21,4 +33,35 @@
 .routes .active  {
 
     color: rgb(21, 146, 248);
+}
+
+.logout-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 680px) {
+    .routes, .App-logo, .App-title {
+        display: none;
+    }
+    .logout-mobile {
+        display: flex;
+        padding: 0 1rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logout-mobile h4 {
+        margin: 0;
+        color: #fff;
+    }
+    .logout-mobile .flexed {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+    .logout-mobile .flexed img {
+        margin-left: 1rem;
+    }
+    .App-header {
+        padding: 2rem 0;
+    }
 }

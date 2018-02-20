@@ -102,3 +102,23 @@
 .Code {
     background: #673AB7;
 }
+
+.add-card-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 680px) {
+    .add-card {
+        display: none;
+    }
+    .add-card-mobile {
+        z-index: 1;
+        display: block;
+        position: fixed;
+        padding: 1.3rem 1.4rem;
+        border-radius: 100%;
+        background: #f44336;
+        right: 1.5rem;
+        bottom: 2.5rem;
+    }
+}

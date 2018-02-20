@@ -8,18 +8,6 @@
   top: 3rem;
 }
 
-.App-header {
-  background-color: #222;
-  color: white;
-  padding: 4rem 0;
-  text-align: center;
-}
-
-.App-title {
-  font-size: 1.5em;
-  margin-bottom: 4rem;
-}
-
 .create  {
 
   position: relative;
@@ -31,6 +19,12 @@
   background: #fff;
   box-shadow: 0 0 14px 0 rgba(0, 0, 0, .19);
   padding: 2rem;
+}
+
+@media screen and (max-width: 680px) {
+  .create {
+    top: 1rem;
+  }
 }
 
 .task-icon:before  {

@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { SignOut } from '../../../actions/auth'
 
 import logo from '../../../assets/logo.svg'
+import logout from '../../../assets/logout.svg'
 import './style.css'
 
 const Header = ({ SignOut }) => (
@@ -20,6 +21,19 @@ const Header = ({ SignOut }) => (
             >
                 Logout
             </button>
+        </div>
+
+        <div className="logout-mobile">
+            <h4>
+                Tomorrow Todo
+            </h4>
+            <h4 className="flexed" onClick={SignOut}>
+                Logout
+                <img 
+                    src={logout}
+                    alt="logout"
+                />
+            </h4>
         </div>
     </div>
 )
