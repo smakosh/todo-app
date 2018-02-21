@@ -35,4 +35,7 @@
     .search .search-icon:before {
         display: none;
     }
+    .search {
+        padding: 0 1rem;
+    }
 }

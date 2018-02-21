@@ -15,19 +15,11 @@ const Task = ({ dispatch, id, name, type, completed }) => (
         </div>
         <div className="task-content">
             <div className="content">
-                <h4
-                    className={`${completed ? 'completed' : '' }`}
-                >
+                <h4 className={`${completed ? 'completed' : '' }`}>
                     {name}
                 </h4>
-                <div
-                    style={{
-                        marginBottom: '.8rem'
-                    }}
-                >
-                    <span 
-                        className={`badge ${type}`}
-                    >
+                <div style={{ marginBottom: '.8rem'}}>
+                    <span className={`badge ${type}`}>
                         {type}
                     </span>
                 </div>

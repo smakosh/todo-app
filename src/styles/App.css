@@ -25,6 +25,9 @@
   .create {
     top: 1rem;
   }
+  .container {
+    width: 100%;
+  }
 }
 
 .task-icon:before  {

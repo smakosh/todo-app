@@ -8,6 +8,7 @@ import { startSetTasks } from './actions/tasks'
 import { login, logout } from './actions/auth'
 import { firebase } from './firebase/firebase'
 
+import 'unnamed'
 import './styles/App.css'
 
 const store = configureStore()

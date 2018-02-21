@@ -11,7 +11,7 @@ import './style.css'
 const Header = ({ SignOut }) => (
     <div className="App-header container-full">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">Before you sleep</h1>
+        <h1 className="App-title">Tomorrow Todo</h1>
 
         <div className="center-text routes">
             <NavLink to="/dashboard" activeClassName="active">App</NavLink>
