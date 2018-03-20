@@ -22,6 +22,17 @@ const taskReducer = (state = taskReducerDefaultState, action) => {
           return tasksToDo
         }
       })
+    case 'SET_TO_UNCOMPLETED':
+      return state.map((tasksToDo) => {
+        if (tasksToDo.id === action.id) {
+          return {
+            ...tasksToDo,
+            completed: false
+          }
+        } else {
+          return tasksToDo
+        }
+      })
     case 'EDIT_TASK':
       return state.map((tasksToDo) => {
         if (tasksToDo.id === action.id) {

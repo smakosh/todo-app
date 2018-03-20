@@ -38,7 +38,7 @@ export const removeTask = ({ id } = {}) => (
   }
 )
 
-export const startremoveTask = ({ id } = {}) => {
+export const startRemoveTask = ({ id } = {}) => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid
     return database.ref(`users/${uid}/tasksToDo/${id}`).remove()
@@ -58,7 +58,7 @@ export const editTask = (id, updates) => (
   }
 )
 
-export const starteditTask = (id, updates) => {
+export const startEditTask = (id, updates) => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid
     return database.ref(`users/${uid}/tasksToDo/${id}`).update(updates)
@@ -93,6 +93,30 @@ export const startCompletedTask = ({ id } = {}) => {
   }
 }
 
+// SET_TO_UNCOMPLETED
+export const uncompletedTask = ({ id } = {}) => (
+  {
+    type: 'SET_TO_UNCOMPLETED',
+    id
+  }
+)
+
+
+export const startUnCompletedTask = ({ id } = {}) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid
+    return database.ref(`users/${uid}/tasksToDo/${id}`).update(
+      {
+        'completed': false
+      }
+    )
+    .then(() => {
+      dispatch(uncompletedTask({ id }))
+    })
+    .catch((err) => console.log(`something went wrong: ${err}`))
+  }
+}
+
 // DELETE_ALL
 export const deleteAll = () => (
   {
@@ -100,7 +124,7 @@ export const deleteAll = () => (
   }
 )
 
-export const startdeleteAll = () => {
+export const startDeleteAll = () => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid
     return database.ref(`users/${uid}/tasksToDo`).remove()

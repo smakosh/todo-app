@@ -8,6 +8,10 @@
     transition: .2s;
 }
 
+.single-task-done {
+    background: #efefef;
+}
+
 .task-content {
     display: flex;
     align-items: center;
@@ -53,18 +57,19 @@
 
 .add-card  {
     padding: 2rem 0;
-    max-width: 500px;
-    margin: 0 auto;
     position: relative;
-    top: -2.5rem;
-    background-color: #fff;
+    top: -2.8rem;
+    margin-bottom: -2.8rem;
 }
 
 .add-card a  {
-    color: #222;
+    color: #fff;
     font-weight: 500;
     transition: .3s;
-    font-size: 14pt;
+    font-size: 16pt;
+    background: #ef5350;
+    border-radius: 100%;
+    padding: 1.2rem 1.5rem;
 }
 
 .add-card a:hover  {
@@ -75,6 +80,10 @@
 
 .completed {
     text-decoration: line-through;
+}
+
+.complete input[type=checkbox]+span:before, .complete input[type=checkbox]:checked+span:before {
+    border-radius: 100%;
 }
 
 .empty-state h2 {

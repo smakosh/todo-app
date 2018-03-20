@@ -2,13 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import { startremoveTask, startCompletedTask } from '../../../../actions/tasks'
+import { startRemoveTask, startCompletedTask, startUnCompletedTask } from '../../../../actions/tasks'
 
 const Task = ({ dispatch, id, name, type, completed }) => (
-    <div className="single-task">
+    <div className={`single-task ${completed ? 'single-task-done ' : ''}`}>
         <div className="right-text delete">
             <a onClick={(event) => {
-                dispatch(startremoveTask({ id: id }
+                dispatch(startRemoveTask({ id: id }
             ))}}>
                 <i className="fa fa-close"></i>
             </a>
@@ -27,12 +27,12 @@ const Task = ({ dispatch, id, name, type, completed }) => (
             <div className="complete">
                 <label>
                     <input 
-                        type="radio" 
+                        type="checkbox" 
                         className="green-checkbox"
                         defaultChecked={`${completed ? 'checked' : '' }`}
-                        onClick={(event) => {
-                            dispatch(startCompletedTask({ id: id }
-                        ))}}
+                        onClick={e => {
+                            completed ? dispatch(startUnCompletedTask({ id: id })) : dispatch(startCompletedTask({ id: id }))
+                        }}
                     />
                     <span></span>
                 </label>

@@ -1,12 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { startdeleteAll } from '../../../../actions/tasks'
+import { startDeleteAll } from '../../../../actions/tasks'
 
 const DeleteAll = ({ dispatch }) => (
     <div className="center-text deleteall">
             <button 
                 onClick={(e) => {
-                    dispatch(startdeleteAll())}} 
+                    dispatch(startDeleteAll())}} 
                 className="btn btn-rounded btn-outlined red-btn"
             >
                 Delete All

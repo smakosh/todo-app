@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { starteditTask } from '../../../actions/tasks'
+import { startEditTask } from '../../../actions/tasks'
 
 import TaskForm from '../TaskForm'
 
@@ -11,7 +11,7 @@ const Edit = (props) => {
             <TaskForm
                 task={props.task}
                 onSubmit={(task) => {
-                    props.dispatch(starteditTask(props.task.id, task))
+                    props.dispatch(startEditTask(props.task.id, task))
                     props.history.push('/')
                 }}
             />

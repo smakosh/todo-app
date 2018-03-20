@@ -13,8 +13,8 @@ import './style.css'
 
 const Tasks = (props) => (
     <div className="container">
-        <div className='card center-text add-card'>
-          <Link to="/create">Add new Task</Link>
+        <div className='right-text add-card'>
+          <Link to="/create"><i className="fa fa-plus"></i></Link>
         </div>
         
         <Link className="add-card-mobile" to="/create">
