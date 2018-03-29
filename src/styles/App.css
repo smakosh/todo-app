@@ -60,7 +60,7 @@
   color: #212121;
 }
 
-.fixedheight {
+.fixedHeight {
   height: 100vh;
 } 
 
@@ -68,78 +68,10 @@ select {
   margin: 2.1rem 0;
 }
 
-.loader {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 100px;
-  height: 100px;
-  background-color: #212121;
-  display: block;
-  margin: 0 auto;
-  -webkit-animation-name: shape;
-          animation-name: shape;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-}
-
-@-webkit-keyframes shape {
-  0% {
-    border-radius: 50% 50% 50% 50%;
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  30% {
-    border-radius: 50% 50% 50% 5px;
-    -webkit-transform: rotate(30deg);
-            transform: rotate(30deg);
-  }
-  50% {
-    border-radius: 50% 50% 5px 5px;
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
-  }
-  70% {
-    border-radius: 50% 5px 5px 5px;
-    -webkit-transform: rotate(120deg);
-            transform: rotate(120deg);
-  }
-  100% {
-    border-radius: 5px 5px 5px 5px;
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-  }
-}
-
-@keyframes shape {
-  0% {
-    border-radius: 50% 50% 50% 50%;
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  30% {
-    border-radius: 50% 50% 50% 5px;
-    -webkit-transform: rotate(30deg);
-            transform: rotate(30deg);
-  }
-  50% {
-    border-radius: 50% 50% 5px 5px;
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
-  }
-  70% {
-    border-radius: 50% 5px 5px 5px;
-    -webkit-transform: rotate(120deg);
-            transform: rotate(120deg);
-  }
-  100% {
-    border-radius: 5px 5px 5px 5px;
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-  }
+select:after{
+  background: url("https://cdn1.iconfinder.com/data/icons/pixel-perfect-at-16px-volume-2/16/5001-128.png") 95% 32% !important;
+  background-repeat: no-repeat !important;
+  background-color: #fff !important;
 }
 
 #nprogress .bar {

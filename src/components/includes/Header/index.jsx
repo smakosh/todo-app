@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+import { CustomButton } from '../../common'
 import { SignOut } from '../../../actions/auth'
 
 import logo from '../../../assets/logo.svg'
@@ -15,12 +16,11 @@ const Header = ({ SignOut }) => (
 
         <div className="center-text routes">
             <NavLink to="/dashboard" activeClassName="active">App</NavLink>
-            <button 
-                className="btn btn-outlined btn-rounded purple-btn"
+            <CustomButton
                 onClick={SignOut}
             >
                 Logout
-            </button>
+            </CustomButton>
         </div>
 
         <div className="logout-mobile">

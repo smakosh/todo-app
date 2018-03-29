@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import { startLogin } from '../../../../actions/auth'
 
+import LoginForm from './LoginForm'
 import logo from '../../../../assets/logo.svg'
 import google from './assets/google.svg'
 
@@ -15,6 +16,7 @@ const Login = ({ startLogin }) => (
             <div className="column xlarge-4 large-8 medium-12 small-12">
                 <img src={logo} className="logotodo" alt="logo" />
                 <div className="card card-hoverable">
+                    <LoginForm />
                     <button 
                         className="google-button"
                         onClick={startLogin}
@@ -26,7 +28,6 @@ const Login = ({ startLogin }) => (
                             Sign in with Google
                         </span>
                     </button>
-                    <h4>That's the only service we support for now</h4>
                 </div>
             </div>
             <div className="column xlarge-4 large-2 hide-tablet-down"></div>
@@ -36,7 +37,9 @@ const Login = ({ startLogin }) => (
 
 const connectedLogin = (dispatch) => (
     {
-        startLogin: () => dispatch(startLogin())
+        startLogin: () => {
+            dispatch(startLogin())
+        }
     }
 )
 

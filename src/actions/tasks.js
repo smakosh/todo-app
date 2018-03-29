@@ -15,11 +15,10 @@ export const startAddTask = (taskData = {}) => {
       name = '',
       type = '',
       day = '',
-      time = '',
       completed = false,
       createdAt = 0
     } = taskData
-    const tasksToDo = { name, type, day, time, completed, createdAt }
+    const tasksToDo = { name, type, day, completed, createdAt }
     
     return database.ref(`users/${uid}/tasksToDo`).push(tasksToDo).then((ref) => {
       dispatch(addTask({

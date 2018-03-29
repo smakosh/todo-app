@@ -24,6 +24,18 @@
     font-weight: normal;
 }
 
+.login .aye .card .password-icon:before {
+    content: "";
+}
+
+.login-inputs {
+    padding: 1rem 2rem;
+}
+
+.login-btn {
+    margin-bottom: 2rem;
+}
+
 .google-button {
     height: 40px;
     border-width: 0;

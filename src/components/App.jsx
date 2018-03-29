@@ -15,10 +15,6 @@ export default class App extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <ConnectedTasks />
-      </div>
-    )
+    return ( <ConnectedTasks /> )
   }
 }

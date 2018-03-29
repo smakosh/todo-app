@@ -9,6 +9,7 @@ import { login, logout } from './actions/auth'
 import { firebase } from './firebase/firebase'
 
 import 'unnamed'
+import { Loader } from './components/common'
 import './styles/App.css'
 
 const store = configureStore()
@@ -29,8 +30,8 @@ const renderApp = () => {
 }
 
 ReactDOM.render(
-    <div className="container center-text fixedheight">
-        <div className="loader"></div>
+    <div className="container center-text fixedHeight">
+        <Loader />
     </div>, document.getElementById('root')
 )
 

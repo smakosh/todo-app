@@ -13,6 +13,12 @@ export const startLogin = () => {
     }
 }
 
+export const logInWithEmail = (email, password) => {
+    return () => {
+        return firebase.auth().signInWithEmailAndPassword(email, password)
+    }
+}
+
 export const logout = () => (
     {
         type: 'LOGOUT'
