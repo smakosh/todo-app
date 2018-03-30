@@ -34,11 +34,7 @@ class LoginForm extends Component {
             NProgress.start()
             firebase.auth().signInWithEmailAndPassword(email, password)
             .then(this.onLoginSuccess.bind(this))
-            .catch(() => {
-                firebase.auth().createUserWithEmailAndPassword(email, password)
-                .then(this.onLoginSuccess.bind(this))
-                .catch(this.onLoginFailure.bind(this))
-            })
+            .catch(this.onLoginFailure.bind(this))
         }
     }
 

@@ -17,6 +17,9 @@ const Login = ({ startLogin }) => (
                 <img src={logo} className="logotodo" alt="logo" />
                 <div className="card card-hoverable">
                     <LoginForm />
+                    <div className="center-text">
+                        <h2 style={{color: '#fff'}}>Or</h2>
+                    </div>
                     <button 
                         className="google-button"
                         onClick={startLogin}
