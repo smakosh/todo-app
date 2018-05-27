@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-
+import cx from 'classnames'
 import { startRemoveTask, startCompletedTask, startUnCompletedTask } from '../../../../actions/tasks'
 
 const Task = ({ dispatch, id, name, type, completed }) => (
-    <div className={`single-task ${completed ? 'single-task-done ' : ''}`}>
+    <div className={cx('single-task', {'single-task-done': completed})}>
         <div className="right-text delete">
             <a onClick={(event) => {
                 dispatch(startRemoveTask({ id: id }
@@ -15,7 +15,7 @@ const Task = ({ dispatch, id, name, type, completed }) => (
         </div>
         <div className="task-content">
             <div className="content">
-                <h4 className={`${completed ? 'completed' : '' }`}>
+                <h4 className={cx({'completed': completed})}>
                     {name}
                 </h4>
                 <div style={{ marginBottom: '.8rem'}}>

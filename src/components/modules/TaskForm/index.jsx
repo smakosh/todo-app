@@ -14,7 +14,6 @@ import './style.css'
 export default class TaskForm extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
             name: props.task ? props.task.name : '',
             type: props.task ? props.task.type : 'Code',
@@ -33,39 +32,28 @@ export default class TaskForm extends Component {
         NProgress.done()
     }
 
-    onNameChange = (e) => {
-        const name = e.target.value
-        this.setState(() => ({ name }))
+    handleChange = e => this.setState({ [e.target.name]: e.target.value })
+    onDateChange = day => {
+        if(!day) this.setState({ day: moment() })
+        else this.setState({ day })
     }
 
-    onDateChange = (day) => {
-        if(!day) {
-            this.setState({ day: moment() })
-        } else {
-            this.setState({ day })
-        }
-    }
-
-    onTypeChange = (e) => {
-        const type = e.target.value
-        this.setState({ type })
-    }
-
-    onSubmit = (e) => {
+    onSubmit = e => {
         e.preventDefault()
         const { name, day, type, createdAt, completed } = this.state
+        const {onSubmit} = this.props
 
-        if(!this.state.name || !this.state.day || !this.state.type) {
-            this.setState({ error: 'Fill in all the fields' })
-        } else {
+        if(!name || !day || !type) this.setState({ error: 'Fill in all the fields' })
+        else {
             NProgress.start()
-            this.props.onSubmit({
+            onSubmit({
                 name,
                 type,
                 day: day.valueOf(),
                 createdAt: createdAt.valueOf(),
                 completed
             })
+
             e.target.type.value = ''
             this.setState({
                 name: '',
@@ -76,10 +64,9 @@ export default class TaskForm extends Component {
         }
     }
 
-    closeModal = () => {
-        this.setState({ error: undefined })
-    }
+    closeModal = () => this.setState({ error: undefined })
     render() {
+        const {name, type, day, error} = this.state
         return (
             <div className="card">
                 <form onSubmit={this.onSubmit}>
@@ -90,13 +77,14 @@ export default class TaskForm extends Component {
                                 type="text"
                                 placeholder="Enter a new task" 
                                 autoComplete="off"
-                                value={this.state.name}
-                                onChange={this.onNameChange}
+                                name="name"
+                                value={name}
+                                onChange={this.handleChange}
                             />
                         </div>
                         <div className="column xlarge-4 small-12">
                             <div className="input-field purple-input">
-                                <select name="type" onChange={this.onTypeChange} value={this.state.type}>
+                                <select name="type" onChange={this.handleChange} value={type}>
                                     <option defaultValue value="Code">Code</option>
                                     <option value="Design">Design</option>
                                     <option value="Lifestyle">Lifestyle</option>
@@ -109,7 +97,7 @@ export default class TaskForm extends Component {
                                 <DatePicker
                                     placeholderText="Choose date"
                                     todayButton={"Today"}
-                                    selected={this.state.day}
+                                    selected={day}
                                     onChange={this.onDateChange}
                                     minDate={moment()}
                                 />
@@ -117,15 +105,11 @@ export default class TaskForm extends Component {
                         </div>
                     </div>
                     <div className="center-text">
-                        <CustomButton
-                            typeBtn="submit"
-                        >
-                            Submit
-                        </CustomButton>
+                        <CustomButton typeBtn="submit">Submit</CustomButton>
                     </div>
                 </form>
                 <Alert
-                    selectedTask={this.state.error}
+                    alertMessage={error}
                     closeModal={this.closeModal}
                 />
             </div>

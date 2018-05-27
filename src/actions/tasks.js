@@ -1,7 +1,5 @@
 import database from '../firebase/firebase'
 
-// actions
-
 // ADD_TASK
 export const addTask = (tasksToDo) => ({
   type: 'ADD_TASK',
@@ -30,12 +28,7 @@ export const startAddTask = (taskData = {}) => {
 }
 
 // DELETE_TASK
-export const removeTask = ({ id } = {}) => (
-  {
-    type: 'DELETE_TASK',
-    id
-  }
-)
+export const removeTask = ({ id } = {}) => ({ type: 'DELETE_TASK', id })
 
 export const startRemoveTask = ({ id } = {}) => {
   return (dispatch, getState) => {
@@ -49,13 +42,7 @@ export const startRemoveTask = ({ id } = {}) => {
 }
 
 // EDIT_TASK
-export const editTask = (id, updates) => (
-  {
-    type: 'EDIT_TASK',
-    id,
-    updates
-  }
-)
+export const editTask = (id, updates) => ({ type: 'EDIT_TASK', id, updates })
 
 export const startEditTask = (id, updates) => {
   return (dispatch, getState) => {
@@ -69,12 +56,7 @@ export const startEditTask = (id, updates) => {
 }
 
 // SET_TO_COMPLETE
-export const completedTask = ({ id } = {}) => (
-  {
-    type: 'SET_TO_COMPLETE',
-    id
-  }
-)
+export const completedTask = ({ id } = {}) => ({ type: 'SET_TO_COMPLETE', id })
 
 
 export const startCompletedTask = ({ id } = {}) => {
@@ -93,13 +75,7 @@ export const startCompletedTask = ({ id } = {}) => {
 }
 
 // SET_TO_UNCOMPLETED
-export const uncompletedTask = ({ id } = {}) => (
-  {
-    type: 'SET_TO_UNCOMPLETED',
-    id
-  }
-)
-
+export const uncompletedTask = ({ id } = {}) => ({ type: 'SET_TO_UNCOMPLETED', id })
 
 export const startUnCompletedTask = ({ id } = {}) => {
   return (dispatch, getState) => {
@@ -117,11 +93,7 @@ export const startUnCompletedTask = ({ id } = {}) => {
 }
 
 // DELETE_ALL
-export const deleteAll = () => (
-  {
-    type: 'DELETE_ALL'
-  }
-)
+export const deleteAll = () => ({ type: 'DELETE_ALL' })
 
 export const startDeleteAll = () => {
   return (dispatch, getState) => {
@@ -135,12 +107,7 @@ export const startDeleteAll = () => {
 }
 
 // SET_TASKS
-export const setTasks = (tasksToDo) => (
-  {
-    type: 'SET_TASKS',
-    tasksToDo
-  }
-)
+export const setTasks = (tasksToDo) => ({ type: 'SET_TASKS', tasksToDo })
 
 export const startSetTasks = () => {
   return (dispatch, getState) => {

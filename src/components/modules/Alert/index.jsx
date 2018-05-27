@@ -19,17 +19,17 @@ const customStyle = {
     }
   }
   
-const Alert = (props) => (
+const Alert = ({alertMessage, closeModal}) => (
     <Modal
-        isOpen={!!props.selectedTask}
+        isOpen={!!alertMessage}
         contentLabel="todo list"
         style={customStyle}
         overlayClassName="Overlay"
-        onRequestClose={props.closeModal}
+        onRequestClose={closeModal}
     >
-        <h2>{props.selectedTask}</h2>
+        <h2>{alertMessage}</h2>
         <button 
-            onClick={props.closeModal} 
+            onClick={closeModal} 
             className="btn btn-rounded btn-outlined purple-btn"
         >
             Close

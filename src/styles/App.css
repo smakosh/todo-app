@@ -9,13 +9,11 @@
 }
 
 .create  {
-
   position: relative;
   top: -3rem;
 }
 
 .create .card  {
-
   background: #fff;
   box-shadow: 0 0 14px 0 rgba(0, 0, 0, .19);
   padding: 2rem;
@@ -34,35 +32,36 @@
   content: '';
 }
 
-.deleteall  {
-
+.delete-all  {
   padding: 1rem 0 3rem 0;
 }
 
-.deleteall .red-btn  {
-
+.delete-all .red-btn  {
   background-color: #f03f3f;
 }
 
 .link  {
-
   padding: 2rem 0;
 }
 
 .link a {
-
   color: #212121;
   font-size: large;
 }
 
 .link a:visited  {
-
   color: #212121;
 }
 
 .fixedHeight {
   height: 100vh;
-} 
+  display: flex;
+  justify-content: center;
+}
+
+.fixedHeight .sk-spinner {
+  align-self: center;
+}
 
 select {
   margin: 2.1rem 0;
