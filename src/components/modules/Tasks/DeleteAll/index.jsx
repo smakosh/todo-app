@@ -3,14 +3,10 @@ import { connect } from 'react-redux'
 import { startDeleteAll } from '../../../../actions/tasks'
 
 const DeleteAll = ({ dispatch }) => (
-    <div className="center-text deleteall">
-            <button 
-                onClick={(e) => {
-                    dispatch(startDeleteAll())}} 
-                className="btn btn-rounded btn-outlined red-btn"
-            >
-                Delete All
-            </button>
+    <div className="center-text delete-all">
+        <button onClick={e => { dispatch(startDeleteAll())}} className="btn btn-rounded btn-outlined red-btn">
+            Delete All
+        </button>
     </div>
 )
 

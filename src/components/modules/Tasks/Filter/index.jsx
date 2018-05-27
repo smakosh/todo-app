@@ -1,14 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
 import { setTextFilter, sortByDate, sortByDeadline } from '../../../../actions/filters'
-
 import './style.css'
 
-const Filter = (props) => (
+const Filter = ({filters, dispatch}) => (
     <div className="container">
         <div className="row">
-            <div className="column xlarge-2 hide-tablet-down"></div>
+            <div className="column xlarge-2 hide-tablet-down" />
             <div className="column xlarge-8 medium-12 small-12">
                 <div className="input-field purple-input search flexed">
                     <span className="search-icon"></span>
@@ -16,17 +14,17 @@ const Filter = (props) => (
                         type="text" 
                         placeholder="Search for a task" 
                         autoComplete="off"
-                        value={props.filters.text} 
-                        onChange={(e) => {
-                            props.dispatch(setTextFilter(e.target.value));
+                        value={filters.text} 
+                        onChange={e => {
+                            dispatch(setTextFilter(e.target.value));
                         }}
                     />
                     <select
-                        onChange={(e) => {
+                        onChange={e => {
                             if(e.target.value === 'date') {
-                                props.dispatch(sortByDate());
+                                dispatch(sortByDate());
                             } else if (e.target.value === 'deadline') {
-                                props.dispatch(sortByDeadline());
+                                dispatch(sortByDeadline());
                             }
                         }}
                     >
@@ -36,7 +34,7 @@ const Filter = (props) => (
                     </select>
                 </div>
             </div>
-            <div className="column xlarge-2 hide-mobile"></div>
+            <div className="column xlarge-2 hide-mobile" />
         </div>
     </div>
 )

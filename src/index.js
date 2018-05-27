@@ -7,9 +7,8 @@ import configureStore from './store/configureStore'
 import { startSetTasks } from './actions/tasks'
 import { login, logout } from './actions/auth'
 import { firebase } from './firebase/firebase'
-
+import Spinner from 'react-spinkit'
 import 'unnamed'
-import { Loader } from './components/common'
 import './styles/App.css'
 
 const store = configureStore()
@@ -31,7 +30,7 @@ const renderApp = () => {
 
 ReactDOM.render(
     <div className="container center-text fixedHeight">
-        <Loader />
+        <Spinner name="pacman" />
     </div>, document.getElementById('root')
 )
 

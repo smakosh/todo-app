@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import firebase from 'firebase'
-
-import { CustomInput, CustomButton, Loader } from '../../../../common'
-
+import {connect} from 'react-redux'
+import Spinner from 'react-spinkit'
+import { CustomInput, CustomButton } from '../../../../common'
+import { logInWithEmail } from '../../../../../actions/auth'
 import NProgress from 'react-nprogress'
 import 'react-nprogress/nprogress.css'
 
@@ -14,27 +14,24 @@ class LoginForm extends Component {
         error: null
     }
 
-    onEmailChange = (e) => {
-        const email = e.target.value
-        this.setState({ email })
-    }
+    handleChange = e => this.setState({ [e.target.name]: e.target.value})
 
-    onPasswordChange = (e) => {
-        const password = e.target.value
-        this.setState({ password })
-    }
-
-    onSubmit = (e) => {
+    onSubmit = e => {
         e.preventDefault()
         const { email, password } = this.state
+        const {dispatch} = this.props
         
         if(!email || !password) {
             this.setState(() => ({ error: 'Fill in all the fields' }))
         } else {
             NProgress.start()
-            firebase.auth().signInWithEmailAndPassword(email, password)
-            .then(this.onLoginSuccess.bind(this))
-            .catch(this.onLoginFailure.bind(this))
+            dispatch(logInWithEmail(email, password))
+            .then(() => {
+                    this.onLoginSuccess()
+                    NProgress.done()
+                }
+            )
+            .catch(() => this.onLoginFailure())
         }
     }
 
@@ -49,52 +46,47 @@ class LoginForm extends Component {
     }
 
     render() {
+        const {email, password, error, loading} = this.state
         return (
             <form onSubmit={this.onSubmit}>
                 <div className="left-text login-inputs">
                     <CustomInput
                         icon="email"
                         type="email"
+                        name="email"
                         placeholder="Enter your email" 
                         autoComplete="on"
-                        value={this.state.email}
-                        onChange={this.onEmailChange}
+                        value={email}
+                        onChange={this.handleChange}
                     />
                     <CustomInput
                         icon="password"
                         type="password"
+                        name="password"
                         placeholder="Enter your password" 
                         autoComplete="on"
-                        value={this.state.password}
-                        onChange={this.onPasswordChange}
+                        value={password}
+                        onChange={this.handleChange}
                     />
                 </div>
-                {
-                    this.state.error ? (
-                        <div className="center-text">
-                            <p style={{color: 'red'}}>{this.state.error}</p>
-                        </div>
-                    ) : null
+                {error &&
+                    <div className="center-text">
+                        <p style={{color: 'red'}}>{error}</p>
+                    </div>
                 }
-                {
-                    this.state.loading ? (
-                        <div className="center-text">
-                            <Loader />
-                        </div>
-                    ) : (
-                        <div className="login-btn">
-                            <CustomButton
-                                typeBtn="submit"
-                            >
-                                Login
-                            </CustomButton>
-                        </div>
-                        
-                    )
-                }
+                {loading ? (
+                    <div className="center-text">
+                        <Spinner name="pacman" />
+                    </div>
+                ) : (
+                    <div className="login-btn">
+                        <CustomButton typeBtn="submit">Login</CustomButton>
+                    </div>
+                    
+                )}
             </form>
         )
     }
 }
 
-export default LoginForm
+export default connect()(LoginForm)

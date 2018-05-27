@@ -11,56 +11,41 @@ import Filter from './Filter'
 import add from '../../../assets/add.svg'
 import './style.css'
 
-const Tasks = (props) => (
+const Tasks = ({tasks}) => (
     <div className="container">
         <div className='right-text add-card'>
           <Link to="/create"><i className="fa fa-plus"></i></Link>
         </div>
-        
         <Link className="add-card-mobile" to="/create">
             <img src={add} alt="add new task" />
         </Link>
-        
         <Filter />
         <div className="row">
             <div className="column xlarge-2 medium-2 hide-mobile"></div>
             <div className="column xlarge-8 medium 8 small-12">
                 <div className="tasks">
                     <FlipMove>
-                        { props.tasks.map((task) => {
-                            return <Task key={task.id} {...task} />
-                        })}
+                        {tasks.map(task => <Task key={task.id} {...task} />)}
                     </FlipMove>
                 </div>
             </div>
             <div className="column xlarge-2 medium-2 hide-mobile"></div>
         </div>
-        {
-            props.tasks.length === 0 ?
+        {tasks.length === 0 &&
             <div className="center-text empty-state">
-                <h2>
-                    You have no tasks to do, it's time to start up your day by adding a new task!
-                </h2>
-                <Link 
-                    to="/create"
-                    className="btn btn-rounded btn-outlined green-btn"
-                >
+                <h2>Start your day by adding some tasks!</h2>
+                <Link to="/create" className="btn btn-rounded btn-outlined green-btn">
                     Add new Task
                 </Link>
             </div>
-            : null
         }
-        {
-            props.tasks.length > 0 ?
-            <DeleteAll />
-            : null
-        }
+        {tasks.length > 0 && <DeleteAll />}
     </div>
 )
 
-const ConnectedTasks = (state) => {
+const ConnectedTasks = ({tasksToDo, filters}) => {
     return {
-        tasks: SelectedTasks(state.tasksToDo, state.filters)
+        tasks: SelectedTasks(tasksToDo, filters)
     }
 }
 

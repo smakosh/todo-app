@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CustomInput = ({icon, type, placeholder, autoComplete, value, onChange}) => (
+const CustomInput = ({icon, type, placeholder, autoComplete, value, name, onChange}) => (
     <div className="input-field purple-input">
         <span className={`${icon}-icon`}></span>
         <input 
@@ -9,6 +9,7 @@ const CustomInput = ({icon, type, placeholder, autoComplete, value, onChange}) =
             autoComplete={autoComplete}
             value={value}
             onChange={onChange}
+            name={name}
         />
     </div>
 )
