@@ -1,47 +1,37 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
-
 import { CustomButton } from '../../common'
 import { SignOut } from '../../../actions/auth'
-
 import logo from '../../../assets/logo.svg'
 import logout from '../../../assets/logout.svg'
 import './style.css'
 
-const Header = ({ SignOut }) => (
+const Header = ({ dispatch, username }) => (
     <div className="App-header container-full">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">Tomorrow Todo</h1>
-
+        <h1 className="App-title dn-m">Welcome</h1>
+        <h4 className="dn-m">{username} !</h4>
         <div className="center-text routes">
             <NavLink to="/dashboard" activeClassName="active">App</NavLink>
-            <CustomButton
-                onClick={SignOut}
-            >
+            <CustomButton onClick={() => dispatch(SignOut())}>
                 Logout
             </CustomButton>
         </div>
-
         <div className="logout-mobile">
-            <h4>
-                Tomorrow Todo
-            </h4>
+            <h4>Welcome</h4>
             <h4 className="flexed" onClick={SignOut}>
                 Logout
-                <img 
-                    src={logout}
-                    alt="logout"
-                />
+                <img src={logout} alt="logout"/>
             </h4>
         </div>
     </div>
 )
 
-const connectedHeader = (dispatch) => (
-    {
-        SignOut: () => dispatch(SignOut())
+const mapStateToProps = ({ auth }) => {
+    return {
+        username: auth.name
     }
-)
+}
 
-export default connect(undefined, connectedHeader)(Header);
+export default connect(mapStateToProps)(Header)

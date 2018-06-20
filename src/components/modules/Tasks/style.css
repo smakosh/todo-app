@@ -1,3 +1,18 @@
+.tasks  {
+    margin-bottom: 2rem;
+    padding: 2rem 0;
+    background-color: #fff;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media screen and (max-width: 1200px) {
+    .tasks {
+        width: 80%;
+    }
+}
+
 .single-task  {
     color: rgb(34, 34, 34);
     background-color: #fff;
@@ -30,12 +45,6 @@
 
 .delete {
     padding: .2rem 0;
-}
-
-.tasks  {
-    margin-bottom: 2rem;
-    padding: 2rem 1rem;
-    background-color: #fff;
 }
 
 .fa  {
@@ -116,9 +125,14 @@
 }
 
 @media screen and (max-width: 680px) {
+    .tasks {
+        width: 90%;
+    }
+
     .add-card {
         display: none;
     }
+
     .add-card-mobile {
         z-index: 1;
         display: block;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import Spinner from 'react-spinkit'
 import { CustomInput, CustomButton } from '../../../../common'
 import { logInWithEmail } from '../../../../../actions/auth'
@@ -19,7 +19,7 @@ class LoginForm extends Component {
     onSubmit = e => {
         e.preventDefault()
         const { email, password } = this.state
-        const {dispatch} = this.props
+        const { dispatch } = this.props
         
         if(!email || !password) {
             this.setState(() => ({ error: 'Fill in all the fields' }))

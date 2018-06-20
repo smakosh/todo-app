@@ -7,9 +7,7 @@ import { startRemoveTask, startCompletedTask, startUnCompletedTask } from '../..
 const Task = ({ dispatch, id, name, type, completed }) => (
     <div className={cx('single-task', {'single-task-done': completed})}>
         <div className="right-text delete">
-            <a onClick={(event) => {
-                dispatch(startRemoveTask({ id: id }
-            ))}}>
+            <a onClick={() => dispatch(startRemoveTask({ id: id }))}>
                 <i className="fa fa-close"></i>
             </a>
         </div>
@@ -30,7 +28,7 @@ const Task = ({ dispatch, id, name, type, completed }) => (
                         type="checkbox" 
                         className="green-checkbox"
                         defaultChecked={`${completed ? 'checked' : '' }`}
-                        onClick={e => {
+                        onClick={() => {
                             completed ? dispatch(startUnCompletedTask({ id: id })) : dispatch(startCompletedTask({ id: id }))
                         }}
                     />

@@ -7,7 +7,7 @@
 
 .App-title {
     font-size: 1.5em;
-    margin-bottom: 4rem;
+    margin: 1rem 0;
 }
 
 .routes  {
@@ -40,7 +40,7 @@
 }
 
 @media screen and (max-width: 680px) {
-    .routes, .App-logo, .App-title {
+    .routes, .App-logo, .dn-m {
         display: none;
     }
     .logout-mobile {
