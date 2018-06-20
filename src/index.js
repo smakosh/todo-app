@@ -34,9 +34,9 @@ ReactDOM.render(
     </div>, document.getElementById('root')
 )
 
-firebase.auth().onAuthStateChanged((user) => {
+firebase.auth().onAuthStateChanged(user => {
     if(user) {
-		store.dispatch(login(user.uid))
+		store.dispatch(login(user.uid, user.displayName))
         store.dispatch(startSetTasks()).then(() => {
             renderApp()
             if(history.location.pathname === '/') {

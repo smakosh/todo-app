@@ -2,13 +2,10 @@ import React, { Component } from 'react'
 import DatePicker from 'react-datepicker'
 import moment from 'moment'
 import NProgress from 'react-nprogress'
-
 import { CustomButton, CustomInput } from '../../common'
 import Alert from '../Alert'
-
 import 'react-nprogress/nprogress.css'
 import 'react-datepicker/dist/react-datepicker.css'
-
 import './style.css'
 
 export default class TaskForm extends Component {
@@ -108,10 +105,7 @@ export default class TaskForm extends Component {
                         <CustomButton typeBtn="submit">Submit</CustomButton>
                     </div>
                 </form>
-                <Alert
-                    alertMessage={error}
-                    closeModal={this.closeModal}
-                />
+                <Alert alertMessage={error} closeModal={this.closeModal} />
             </div>
         )
     }

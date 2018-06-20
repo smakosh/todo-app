@@ -20,16 +20,10 @@ const Tasks = ({tasks}) => (
             <img src={add} alt="add new task" />
         </Link>
         <Filter />
-        <div className="row">
-            <div className="column xlarge-2 medium-2 hide-mobile"></div>
-            <div className="column xlarge-8 medium 8 small-12">
-                <div className="tasks">
-                    <FlipMove>
-                        {tasks.map(task => <Task key={task.id} {...task} />)}
-                    </FlipMove>
-                </div>
-            </div>
-            <div className="column xlarge-2 medium-2 hide-mobile"></div>
+        <div className="tasks">
+            <FlipMove>
+                {tasks.map(task => <Task key={task.id} {...task} />)}
+            </FlipMove>
         </div>
         {tasks.length === 0 &&
             <div className="center-text empty-state">
