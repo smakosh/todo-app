@@ -2,7 +2,8 @@
 
 const filtersReducerDefaultState = {
     text: '',
-    sortBy: 'date'
+    sortBy: 'date',
+    show: 'All'
 }
 
 export default (state = filtersReducerDefaultState, action) => {
@@ -21,6 +22,11 @@ export default (state = filtersReducerDefaultState, action) => {
             return {
                 ...state,
                 sortBy: 'date'
+            }
+        case 'FILTER':
+            return {
+                ...state,
+                show: action.by
             }
         default:
             return state
