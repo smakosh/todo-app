@@ -32,4 +32,4 @@ const mapStateToProps = ({ auth }) => ({
     username: auth.name
 })
 
-export default connect(mapStateToProps, { SignOut )(Header)
+export default connect(mapStateToProps, { SignOut })(Header)
