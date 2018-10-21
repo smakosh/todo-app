@@ -3,25 +3,25 @@ import { connect } from 'react-redux'
 import { Route, Redirect } from 'react-router-dom'
 
 const PublicRoute = (
-    {
-        isLoggedin,
-        component: Component,
-        ...rest
-    }
+	{
+		isLoggedin,
+		component: Component,
+		...rest
+	}
 ) => (
-    <Route {...rest} component={(props) => (
-        isLoggedin ? (
-            <Redirect to="/dashboard" />
-        ) : (
-            <Component {...props} />
-        )
-    )} />
+	<Route {...rest}
+		component={(props) => (
+			isLoggedin ? (
+				<Redirect to="/dashboard" />
+			) : (
+				<Component {...props} />
+			)
+		)}
+	/>
 )
 
-const mapStateToProps = (state) => (
-    {
-        isLoggedin: !!state.auth.uid
-    }
-)
+const mapStateToProps = ({ auth }) => ({
+	isLoggedin: !!auth.uid
+})
 
 export default connect(mapStateToProps)(PublicRoute)

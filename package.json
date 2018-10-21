@@ -7,6 +7,7 @@
     "firebase": "^4.8.0",
     "history": "^4.7.2",
     "moment": "^2.19.3",
+    "node-sass": "^4.9.4",
     "react": "^16.1.1",
     "react-datepicker": "^0.61.0",
     "react-dom": "^16.1.1",
@@ -15,17 +16,29 @@
     "react-nprogress": "^0.1.6",
     "react-redux": "5.0.5",
     "react-router-dom": "4.2.2",
-    "react-scripts": "1.0.17",
+    "react-scripts": "^2.0.5",
     "react-spinkit": "^3.0.0",
     "recompose": "^0.27.1",
     "redux": "3.7.2",
     "redux-thunk": "^2.2.0",
-    "unnamed": "^1.2.3"
+    "unnamed": "^1.2.6"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
