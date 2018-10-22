@@ -13,6 +13,12 @@
     }
 }
 
+.content {
+    @media screen and (max-width: 680px) {
+        padding-top: 5rem;
+    }
+}
+
 .single-task  {
     color: rgb(34, 34, 34);
     background-color: #fff;

@@ -11,7 +11,7 @@ import add from './assets/add.svg'
 import './style.scss'
 
 const Tasks = ({ tasks, filters }) => (
-	<div className="container">
+	<div className="container content">
 		<div className="right-text add-card">
 			<Link to="/create"><i className="fa fa-plus" /></Link>
 		</div>
